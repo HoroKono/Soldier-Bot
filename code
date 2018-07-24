@@ -1,0 +1,123 @@
+import discord
+from discord.ext.commands import Bot
+from discord.ext import commands
+import asyncio
+import time
+import random
+import asyncio
+
+Client = discord.Client()
+client = commands.Bot(command_prefix = "^")
+
+@client.event
+async def on_ready():
+  await client.change_presence(game=discord.Game(name='KILLING MAGGOTS!'))
+  print("i am ready")
+  print(client.user.id)
+  print(client.user.name)
+  print("maggot")
+
+
+@client.event
+#this is the message new members get when they join the server
+async def on_member_join(member):
+  print("a new robot has " + member.name + "joined")
+  await client.send_message(member,"**Welcome To BFB&G read the rules**\r\n :scroll: commands :scroll:\r\n\r\n```^cloudran\r\n^flip\r\n^ask\r\n^tftube```\r\n\r\ni hope you enjoy your stay\r\n\r\n\r\n`(well is not like i can say anything else fuck my creator Gray Mann)`   ")
+  print("send message to" + member.name)
+
+
+@client.event
+async def on_message(message):
+  if message.content.upper().startswith("^ASK"):
+    await client.send_message(message.channel,random.choice([
+      "Maggot that is not going to happen ",
+      "I did some basic math and i found out that you have a chance ",
+      "That will happen like it or not ",
+      "that will definitely will happen! ",
+      "Don't count on it maggot",
+      "that may work",
+      "if that works make me a can, well i am one but you get what i mean",
+      "well that is going to work out you",
+      "please kill me*bug detected! following protocol for bugs............bug fixed*i mean that will work out",
+      ]))
+
+
+
+  if message.content.upper().startswith("^FLIP"):
+    await client.send_message(message.channel,random.choice([
+      "Red",
+      "Blu",
+      "Robots",
+      ]))
+
+  elif message.content.upper().startswith("^CLOUDRAN"):
+    await client.send_message(message.channel,random.choice([
+            ":arrow_right: https://soundcloud.com/clozee/tracks :arrow_left: ", 
+            ":arrow_right: https://soundcloud.com/hanzbeats/tracks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/iamporou :arrow_left:",
+            ":arrow_right: https://soundcloud.com/c418 :arrow_left:",
+            ":arrow_right: soundcloud.com/elliot-hsu :arrow_left:",
+            ":arrow_right: https://soundcloud.com/imyourlovergirl :arrow_left:",
+            ":arrow_right: https://soundcloud.com/eveline-eevee :arrow_left:",
+            ":arrow_right: https://soundcloud.com/tamamimusic :arrow_left:",
+            ":arrow_right: https://soundcloud.com/ujico :arrow_left:",
+            ":arrow_right: https://soundcloud.com/hamzah-zulqadar :arrow_left:",
+            ":arrow_right: https://soundcloud.com/beticalmusic :arrow_left:",
+            ":arrow_right: https://soundcloud.com/petitbiscuit/tracks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/miraie/tracks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/mt-marcy :arrow_left:",
+            ":arrow_right: https://soundcloud.com/dapper-dog :arrow_left:",
+            ":arrow_right: https://soundcloud.com/pronouncedyea :arrow_left:",
+            ":arrow_right: https://soundcloud.com/rustyhook :arrow_left:",
+            ":arrow_right: https://soundcloud.com/sharaxsierra :arrow_left:",
+            ":arrow_right: https://soundcloud.com/shittyasshari :arrow_left:",
+            ":arrow_right: https://soundcloud.com/roruru :arrow_left:",
+            ":arrow_right: https://soundcloud.com/xandra :arrow_left:",
+            ":arrow_right: https://soundcloud.com/pronouncedyea :arrow_left:",
+            ":arrow_right: https://soundcloud.com/whoskid :arrow_left:",
+            ":arrow_right: https://soundcloud.com/theriftwarden/tracks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/dark_cat :arrow_left:",
+            ":arrow_right: https://soundcloud.com/odditiespacks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/glossymusic :arrow_left:",
+            ":arrow_right: https://soundcloud.com/socalnightcore :arrow_left:",
+            ":arrow_right: https://soundcloud.com/coldhp/tracks :arrow_left:",
+            ":arrow_right: https://soundcloud.com/one_core :arrow_left:",
+            ":arrow_right: https://soundcloud.com/oasis-hammock :arrow_left:",
+            ":arrow_right: https://soundcloud.com/tenma-tenma :arrow_left:",
+            ":arrow_right: https://soundcloud.com/bitbirdofficial :arrow_left:",
+            ]))
+
+
+  elif message.content.upper().startswith("^TFTUBE"):
+    await client.send_message(message.channel,random.choice([
+            "https://www.youtube.com/user/danethebrain uncle dan good eng man ", 
+            "https://www.youtube.com/user/KritzKast podkast i guess",
+            "https://www.youtube.com/user/TheWoundedStapler even more podkasts",
+            "https://www.youtube.com/user/UEAKCrash maps!",
+            "https://www.youtube.com/user/ArraySeven medicine man",
+            "https://www.youtube.com/channel/UCJ9nM6-wAt9RIiPqw2i-fuA tf2 vidoes i guess?",
+            "https://www.youtube.com/channel/UCKkPsYRicXt2cONXd-pZk8A trading lots of trading",
+            "https://www.youtube.com/user/StaryKrow weeb that play's tf2",
+            "https://www.youtube.com/channel/UC0Eqb484X8EiNrFLSUQVsaA i don't like his shit",
+            "https://www.youtube.com/channel/UCUR566sL_gMIlByPaA0MeSw spy guy",
+            "https://www.youtube.com/channel/UCw2Fw3e7ryUrcgbr3iSwTjQ i guess he is funny?",
+            "https://www.youtube.com/channel/UCd-qVRcjoK9zjtDs_LRxSmw i will suck his dick orally",
+            "https://www.youtube.com/user/InvaderChloemew seems like a nice guy",
+            "https://www.youtube.com/channel/UCe8Jx3nbqr-aZqNIBXfasGQ sooooo goood makes me have a boner every time hmmmmmmmm",
+            "https://www.youtube.com/channel/UCU70W4XPrqVeOECjJpqViZQ i like his voice",
+            "https://www.youtube.com/channel/UCyiIPtd-GmZBWnZ86hXPeaA flying white thing",
+            "https://www.youtube.com/user/gavinc27 pro cunt",
+            "https://www.youtube.com/user/TeamFortressTV comp lots of comp",
+            "https://www.youtube.com/user/XLazyPurpleX make more stuff",
+            "https://youtu.be/CCkQhq1-YJ4 i know this is not tf2 but the horo loves this trash",
+            "https://www.youtube.com/user/SkyminSlash shit is a e-girl ",
+            "https://www.youtube.com/user/maxboxlmaobox slap slap box box",
+            "https://www.youtube.com/user/stabbyvideo stub stub",
+            "https://www.youtube.com/channel/UC2VbVZbodmyvXAlukCQKiHw furry",
+            ]))
+
+
+
+
+
+client.run("BOT_TOKEN")
